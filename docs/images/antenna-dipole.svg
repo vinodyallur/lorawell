@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="550" viewBox="0 0 780 550" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font-size: 20px; font-weight: bold; fill: #222222; }
+    .h { font-size: 14px; font-weight: bold; fill: #222222; }
+    .t { font-size: 13px; fill: #333333; }
+    .lbl { font-size: 12px; fill: #555555; }
+    .cu { stroke: #b87333; stroke-width: 6; fill: none; stroke-linecap: round; }
+    .coax { stroke: #444444; stroke-width: 5; fill: none; }
+    .dim { stroke: #777777; stroke-width: 1.5; fill: none; }
+  </style>
+  <rect class="bg" x="0" y="0" width="780" height="550"/>
+  <text x="390" y="34" text-anchor="middle" class="title">433 MHz DIY dipole antenna (make one per board)</text>
+
+  <!-- RA-02 and pigtail -->
+  <rect x="40" y="230" width="120" height="60" rx="6" fill="#f7f9fc" stroke="#34495e" stroke-width="2"/>
+  <text x="100" y="265" text-anchor="middle" class="h">RA-02</text>
+  <rect x="158" y="254" width="10" height="12" fill="#d4a017" stroke="#8a6d0b"/>
+  <path class="coax" d="M168 260 H420"/>
+  <text x="285" y="246" text-anchor="middle" class="lbl">IPEX → SMA pigtail</text>
+  <text x="285" y="284" text-anchor="middle" class="lbl">just a cable: its length doesn't count</text>
+
+  <!-- SMA connector -->
+  <rect x="420" y="246" width="40" height="28" rx="3" fill="#d4a017" stroke="#8a6d0b" stroke-width="1.5"/>
+  <text x="440" y="264" text-anchor="middle" font-size="11" font-weight="bold" fill="#5a4600">SMA</text>
+
+  <!-- Dipole arms -->
+  <line class="cu" x1="440" y1="246" x2="440" y2="70"/>
+  <line class="cu" x1="440" y1="274" x2="440" y2="450"/>
+
+  <!-- Dimensions -->
+  <path class="dim" d="M402 70 H418 M410 70 V246 M402 246 H418"/>
+  <text x="398" y="158" text-anchor="middle" class="t" transform="rotate(-90 398 158)">17.3 cm</text>
+  <path class="dim" d="M402 274 H418 M410 274 V450 M402 450 H418"/>
+  <text x="398" y="362" text-anchor="middle" class="t" transform="rotate(-90 398 362)">17.3 cm</text>
+
+  <!-- Arm labels -->
+  <text x="460" y="140" class="h">Wire 1 — 17.3 cm, pointing up</text>
+  <text x="460" y="158" class="t">soldered into the SMA centre pin / hole</text>
+  <text x="460" y="176" class="t">(the cable core)</text>
+  <text x="470" y="265" class="t">≈ 35 cm tip to tip, vertical</text>
+  <text x="460" y="360" class="h">Wire 2 — 17.3 cm, pointing down</text>
+  <text x="460" y="378" class="t">wrapped under the nut or soldered to the</text>
+  <text x="460" y="396" class="t">gold SMA body (the cable braid)</text>
+
+  <!-- Do / don't -->
+  <text x="40" y="330" class="h">Do</text>
+  <text x="40" y="350" class="t">• copper wire (a LAN-cable core is ideal)</text>
+  <text x="40" y="368" class="t">• keep it straight; small bends are fine</text>
+  <text x="40" y="386" class="t">• mount both antennas vertically</text>
+  <text x="40" y="404" class="t">• let the cable leave sideways, at right angles</text>
+  <text x="40" y="422" class="t">• keep away from metal, grills, starter box</text>
+  <text x="40" y="440" class="t">• outdoors: inside a sealed PVC pipe</text>
+  <text x="40" y="472" class="h">Don't</text>
+  <text x="40" y="492" class="t">• zigzag or coil the wires</text>
+  <text x="40" y="510" class="t">• let wire 1 touch the SMA body (check: no beep)</text>
+  <text x="40" y="528" class="t">• power a board without its antenna</text>
+</svg>

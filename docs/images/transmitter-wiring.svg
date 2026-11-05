@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" font-family="Arial, Helvetica, sans-serif">
+  <style>
+    .bg { fill: #ffffff; }
+    .box { fill: #f7f9fc; stroke: #34495e; stroke-width: 2; }
+    .mcu { fill: #eef7ee; stroke: #2e7d32; stroke-width: 2.5; }
+    .title { font-size: 22px; font-weight: bold; fill: #222222; }
+    .sub { font-size: 13px; fill: #555555; }
+    .h { font-size: 15px; font-weight: bold; fill: #222222; }
+    .dev { font-size: 13px; font-weight: bold; fill: #34495e; }
+    .pin { font-size: 13px; fill: #222222; }
+    .lbl { font-size: 11px; fill: #555555; }
+    .note { font-size: 13px; fill: #333333; }
+    .flag { font-size: 13px; font-weight: bold; fill: #d62728; }
+    .w { stroke-width: 2.5; fill: none; }
+    .spi { stroke: #1f77b4; }
+    .ctl { stroke: #17a2b8; }
+    .pwr { stroke: #d62728; }
+    .gnd { stroke: #333333; }
+    .i2c { stroke: #8e44ad; }
+    .gpio { stroke: #2ca02c; }
+    .buz { stroke: #e67e22; }
+    .coax { stroke: #555555; stroke-width: 4; fill: none; }
+    .cu { stroke: #b87333; stroke-width: 5; fill: none; stroke-linecap: round; }
+    .dot { fill: #333333; }
+  </style>
+  <rect class="bg" x="0" y="0" width="1240" height="760"/>
+
+  <text x="620" y="38" text-anchor="middle" class="title">LoRaWell — Transmitter wiring (ESP32 DevKit)</text>
+  <text x="620" y="62" text-anchor="middle" class="sub">Logical wiring by GPIO number. Pin positions differ between DevKit boards, so follow the labels printed on your board.</text>
+
+  <!-- Antenna -->
+  <text x="95" y="190" text-anchor="middle" class="dev">433 MHz dipole</text>
+  <line class="cu" x1="95" y1="330" x2="95" y2="205"/>
+  <line class="cu" x1="95" y1="350" x2="95" y2="475"/>
+  <rect x="85" y="330" width="20" height="20" fill="#d4a017" stroke="#8a6d0b" stroke-width="1.5"/>
+  <text x="108" y="262" class="lbl">17.3 cm</text>
+  <text x="108" y="418" class="lbl">17.3 cm</text>
+  <path class="coax" d="M105 340 H230"/>
+  <text x="168" y="330" text-anchor="middle" class="lbl">IPEX–SMA</text>
+
+  <!-- RA-02 -->
+  <rect class="box" x="230" y="110" width="170" height="460" rx="6"/>
+  <text x="315" y="138" text-anchor="middle" class="h">RA-02</text>
+  <text x="315" y="156" text-anchor="middle" class="lbl">SX1278 · 433 MHz</text>
+  <text x="240" y="344" class="pin">ANT</text>
+  <text x="390" y="194" text-anchor="end" class="pin">SCK</text>
+  <text x="390" y="239" text-anchor="end" class="pin">MISO</text>
+  <text x="390" y="284" text-anchor="end" class="pin">MOSI</text>
+  <text x="390" y="329" text-anchor="end" class="pin">NSS</text>
+  <text x="390" y="374" text-anchor="end" class="pin">RESET</text>
+  <text x="390" y="419" text-anchor="end" class="pin">DIO0</text>
+  <text x="390" y="479" text-anchor="end" class="pin">3.3V</text>
+  <text x="390" y="534" text-anchor="end" class="pin">GND</text>
+
+  <!-- ESP32 DevKit -->
+  <rect class="mcu" x="560" y="110" width="240" height="530" rx="8"/>
+  <text x="680" y="138" text-anchor="middle" class="h">ESP32 DevKit</text>
+  <text x="680" y="156" text-anchor="middle" class="lbl">ESP32-WROOM-32</text>
+  <text x="570" y="194" class="pin">GPIO18</text>
+  <text x="570" y="239" class="pin">GPIO19</text>
+  <text x="570" y="284" class="pin">GPIO23</text>
+  <text x="570" y="329" class="pin">GPIO5</text>
+  <text x="570" y="374" class="pin">GPIO14</text>
+  <text x="570" y="419" class="pin">GPIO26</text>
+  <text x="570" y="479" class="pin">3V3</text>
+  <text x="570" y="534" class="pin">GND</text>
+  <text x="790" y="194" text-anchor="end" class="pin">GPIO21</text>
+  <text x="790" y="234" text-anchor="end" class="pin">GPIO22</text>
+  <text x="790" y="324" text-anchor="end" class="pin">GPIO34</text>
+  <text x="790" y="419" text-anchor="end" class="pin">GPIO33</text>
+  <text x="790" y="484" text-anchor="end" class="pin">GPIO2</text>
+  <text x="790" y="534" text-anchor="end" class="pin">GPIO4</text>
+  <text x="790" y="584" text-anchor="end" class="pin">GPIO32</text>
+  <text x="680" y="625" text-anchor="middle" class="lbl">USB — 5 V power in</text>
+
+  <!-- RA-02 to ESP32 -->
+  <path class="w spi" d="M400 190 H560"/>
+  <path class="w spi" d="M400 235 H560"/>
+  <path class="w spi" d="M400 280 H560"/>
+  <path class="w ctl" d="M400 325 H560"/>
+  <path class="w ctl" d="M400 370 H560"/>
+  <path class="w ctl" d="M400 415 H560"/>
+  <path class="w pwr" d="M400 475 H560"/>
+  <path class="w gnd" d="M400 530 H560"/>
+  <text x="520" y="184" text-anchor="middle" class="lbl">SCK</text>
+  <text x="520" y="229" text-anchor="middle" class="lbl">MISO</text>
+  <text x="520" y="274" text-anchor="middle" class="lbl">MOSI</text>
+  <text x="520" y="319" text-anchor="middle" class="lbl">CS</text>
+  <text x="520" y="364" text-anchor="middle" class="lbl">RESET</text>
+  <text x="520" y="409" text-anchor="middle" class="lbl">DIO0</text>
+  <text x="520" y="469" text-anchor="middle" class="lbl">3.3 V</text>
+  <text x="520" y="524" text-anchor="middle" class="lbl">GND</text>
+
+  <!-- C1 across RA-02 supply -->
+  <path class="w pwr" d="M440 475 V497"/>
+  <path class="w gnd" d="M440 509 V530"/>
+  <path stroke="#333333" stroke-width="3" d="M426 497 H454 M426 509 H454"/>
+  <circle class="dot" cx="440" cy="475" r="4"/>
+  <circle class="dot" cx="440" cy="530" r="4"/>
+  <text x="452" y="556" text-anchor="middle" class="lbl">C1 100–470 µF</text>
+  <text x="452" y="571" text-anchor="middle" class="lbl">(recommended)</text>
+
+  <!-- ESP32 to OLED / touch / buzzer -->
+  <path class="w i2c" d="M800 190 H920"/>
+  <path class="w i2c" d="M800 230 H920"/>
+  <path class="w gpio" d="M800 320 H920"/>
+  <path class="w buz" d="M800 415 H920"/>
+  <text x="860" y="184" text-anchor="middle" class="lbl">SDA</text>
+  <text x="860" y="224" text-anchor="middle" class="lbl">SCL</text>
+  <text x="860" y="314" text-anchor="middle" class="lbl">TOUCH</text>
+  <text x="860" y="409" text-anchor="middle" class="lbl">BUZZER</text>
+
+  <!-- OLED -->
+  <text x="1020" y="155" text-anchor="middle" class="dev">OLED SSD1306 128×64 (I²C 0x3C)</text>
+  <rect class="box" x="920" y="165" width="200" height="90" rx="6"/>
+  <text x="930" y="194" class="pin">SDA</text>
+  <text x="930" y="234" class="pin">SCL</text>
+  <text x="1110" y="194" text-anchor="end" class="pin">VCC</text>
+  <text x="1110" y="234" text-anchor="end" class="pin">GND</text>
+  <path class="w pwr" d="M1120 190 H1150"/>
+  <text x="1155" y="194" class="flag">3V3</text>
+  <path class="w gnd" d="M1120 230 H1150 v10 m-10 0 h20 m-16 5 h12 m-8 5 h4"/>
+
+  <!-- Touch sensor -->
+  <text x="1020" y="285" text-anchor="middle" class="dev">Touch sensor TTP223 (OUT = HIGH when touched)</text>
+  <rect class="box" x="920" y="295" width="200" height="50" rx="6"/>
+  <text x="930" y="324" class="pin">OUT</text>
+  <text x="1110" y="312" text-anchor="end" class="pin">VCC</text>
+  <text x="1110" y="336" text-anchor="end" class="pin">GND</text>
+  <path class="w pwr" d="M1120 308 H1150"/>
+  <text x="1155" y="312" class="flag">3V3</text>
+  <path class="w gnd" d="M1120 332 H1150 v10 m-10 0 h20 m-16 5 h12 m-8 5 h4"/>
+
+  <!-- Buzzer -->
+  <text x="1020" y="380" text-anchor="middle" class="dev">Active buzzer</text>
+  <rect class="box" x="920" y="390" width="200" height="50" rx="6"/>
+  <text x="930" y="419" class="pin">+</text>
+  <text x="1110" y="419" text-anchor="end" class="pin">−</text>
+  <path class="w gnd" d="M1120 415 H1150 v10 m-10 0 h20 m-16 5 h12 m-8 5 h4"/>
+
+  <!-- Status LEDs -->
+  <text x="920" y="466" class="dev">Status LEDs: GPIO → 330 Ω → LED → GND</text>
+
+  <path class="w gpio" d="M800 480 H840"/>
+  <rect x="840" y="472" width="50" height="16" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+  <text x="865" y="467" text-anchor="middle" class="lbl">330 Ω</text>
+  <path class="w gpio" d="M890 480 H930"/>
+  <polygon points="930,469 930,491 952,480" fill="#2d7ff9" stroke="#333333" stroke-width="1.5"/>
+  <path stroke="#333333" stroke-width="2.5" d="M952 469 V491"/>
+  <path class="w gnd" d="M952 480 H990 v10 m-10 0 h20 m-16 5 h12 m-8 5 h4"/>
+  <text x="1020" y="484" class="pin">Blue — LINK (GPIO2)</text>
+
+  <path class="w gpio" d="M800 530 H840"/>
+  <rect x="840" y="522" width="50" height="16" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+  <text x="865" y="517" text-anchor="middle" class="lbl">330 Ω</text>
+  <path class="w gpio" d="M890 530 H930"/>
+  <polygon points="930,519 930,541 952,530" fill="#27ae60" stroke="#333333" stroke-width="1.5"/>
+  <path stroke="#333333" stroke-width="2.5" d="M952 519 V541"/>
+  <path class="w gnd" d="M952 530 H990 v10 m-10 0 h20 m-16 5 h12 m-8 5 h4"/>
+  <text x="1020" y="534" class="pin">Green — MOTOR ON (GPIO4)</text>
+
+  <path class="w gpio" d="M800 580 H840"/>
+  <rect x="840" y="572" width="50" height="16" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+  <text x="865" y="567" text-anchor="middle" class="lbl">330 Ω</text>
+  <path class="w gpio" d="M890 580 H930"/>
+  <polygon points="930,569 930,591 952,580" fill="#e74c3c" stroke="#333333" stroke-width="1.5"/>
+  <path stroke="#333333" stroke-width="2.5" d="M952 569 V591"/>
+  <path class="w gnd" d="M952 580 H990 v10 m-10 0 h20 m-16 5 h12 m-8 5 h4"/>
+  <text x="1020" y="584" class="pin">Red — MOTOR OFF (GPIO32)</text>
+
+  <!-- Pin dots -->
+  <g class="dot">
+    <circle cx="400" cy="190" r="3"/><circle cx="560" cy="190" r="3"/>
+    <circle cx="400" cy="235" r="3"/><circle cx="560" cy="235" r="3"/>
+    <circle cx="400" cy="280" r="3"/><circle cx="560" cy="280" r="3"/>
+    <circle cx="400" cy="325" r="3"/><circle cx="560" cy="325" r="3"/>
+    <circle cx="400" cy="370" r="3"/><circle cx="560" cy="370" r="3"/>
+    <circle cx="400" cy="415" r="3"/><circle cx="560" cy="415" r="3"/>
+    <circle cx="400" cy="475" r="3"/><circle cx="560" cy="475" r="3"/>
+    <circle cx="400" cy="530" r="3"/><circle cx="560" cy="530" r="3"/>
+    <circle cx="800" cy="190" r="3"/><circle cx="920" cy="190" r="3"/>
+    <circle cx="800" cy="230" r="3"/><circle cx="920" cy="230" r="3"/>
+    <circle cx="800" cy="320" r="3"/><circle cx="920" cy="320" r="3"/>
+    <circle cx="800" cy="415" r="3"/><circle cx="920" cy="415" r="3"/>
+    <circle cx="800" cy="480" r="3"/><circle cx="800" cy="530" r="3"/><circle cx="800" cy="580" r="3"/>
+  </g>
+
+  <!-- Notes -->
+  <text x="40" y="676" class="note">• RA-02 is 3.3 V only — never connect it to 5 V. Never power a board without its 433 MHz antenna attached.</text>
+  <text x="40" y="698" class="note">• Every red "3V3" label goes to the ESP32 3V3 pin; all GND symbols are connected together.</text>
+  <text x="40" y="720" class="note">• GPIO34 is input-only with no internal pull resistor; the TTP223 push-pull output drives it directly.</text>
+  <text x="40" y="742" class="note">• Use an active (self-oscillating) buzzer; if it draws more than about 20 mA, switch it with an NPN transistor.</text>
+</svg>
